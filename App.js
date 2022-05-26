@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import { AuthContextProvider } from './src/context/authContext';
+import { TouchableOpacity } from 'react-native';
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
@@ -28,16 +30,17 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Scanned Data: {scannedData != null ? scannedData : 'no data scanned!'}</Text>
-      <BarCodeScanner
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={StyleSheet.absoluteFillObject}
-      />
-      {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
-    </View>
+    <AuthContextProvider>
+     <View style={styles.container}>
+         <TouchableOpacity>
+            Tste
+         </TouchableOpacity>
+      </View>
+    </AuthContextProvider>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
