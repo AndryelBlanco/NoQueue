@@ -33,7 +33,7 @@ export default function App() {
     <AuthContextProvider>
      <View style={styles.container}>
          <TouchableOpacity>
-            Tste
+            Teste
          </TouchableOpacity>
       </View>
     </AuthContextProvider>
