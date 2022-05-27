@@ -1,11 +1,17 @@
-import React from 'react'
-import { Text, View } from 'react-native';
+import React, { useContext } from 'react'
+import { Text, TouchableOpacity, View } from 'react-native';
+import { AuthContext } from '../../context/authContext';
 
 
 const Home = () => {
+
+  const { signIn } = useContext(AuthContext)
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
+      <TouchableOpacity>
+        <Text onPress={() => signIn()}>Home!</Text>
+      </TouchableOpacity>
     </View>
   );
 }
