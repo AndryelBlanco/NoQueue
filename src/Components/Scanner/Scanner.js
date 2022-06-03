@@ -1,8 +1,13 @@
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import React, { useEffect, useState } from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Dimensions, StyleSheet, Text, View } from 'react-native';
+import { ScannerView } from './Styled_Scanner';
 
-function Scanner() {
+
+const { width } = Dimensions.get('window')
+const qrSize = width * 0.7
+
+function Scanner({ setData }) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
   const [scannedData, setScannedData] = useState(null) 
@@ -17,7 +22,7 @@ function Scanner() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     setScannedData(data)
-    // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
   };
 
   if (hasPermission === null) {
@@ -27,15 +32,16 @@ function Scanner() {
     return <Text>No access to camera</Text>;
   }
 
+
   return (
-    <View style={styles.container}>
-      <Text>Scanned Data: {scannedData != null ? scannedData : 'no data scanned!'}</Text>
+    <ScannerView>
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={StyleSheet.absoluteFillObject}
+        style={StyleSheet.absoluteFill} 
       />
+      <Text>Scanned Datas: {scannedData != null ? scannedData : 'no data scanned!'}</Text>
       {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
-    </View>
+    </ScannerView>
   );
 }
 
@@ -46,6 +52,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
 });
 
 export default Scanner
