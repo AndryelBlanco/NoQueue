@@ -11,6 +11,7 @@ import Home from './src/Screens/Home/Home';
 import Stores from './src/Screens/Stores/Stores';
 import Profile from './src/Screens/Profile/Profile';
 import ScannerPage from './src/Screens/Scanner/ScannerPage';
+import Wallet from './src/Screens/Wallet/Wallet';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,6 +33,9 @@ function MyTabs() {
           case 'Perfil':
             iconName = 'account'
             break;
+          case 'Carteira':
+            iconName = 'wallet'
+            break;
         }
           // You can return any component that you like here! 
           return (
@@ -44,6 +48,7 @@ function MyTabs() {
       >
       <Tab.Screen name="Lojas" options={tabOptions} component={Stores} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
+      <Tab.Screen name="Carteira" options={tabOptions}  component={Wallet} />
       <Tab.Screen name="Perfil" options={tabOptions}  component={Profile} />
     </Tab.Navigator>
   );
