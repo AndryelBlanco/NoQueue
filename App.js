@@ -8,11 +8,13 @@ import { TouchableOpacity } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Home from './src/Screens/Home/Home';
-import Scanner from './src/Screens/Scanner/Scanner';
 import Stores from './src/Screens/Stores/Stores';
 import Profile from './src/Screens/Profile/Profile';
+import ScannerPage from './src/Screens/Scanner/ScannerPage';
 
 const Tab = createBottomTabNavigator();
+
+const tabOptions = { headerShown: false }
 
 function MyTabs() {
   return (
@@ -40,9 +42,9 @@ function MyTabs() {
         tabBarInactiveTintColor: 'gray',
         })}
       >
-      <Tab.Screen name="Lojas" component={Stores} />
-      <Tab.Screen name="Scanner" component={Scanner} />
-      <Tab.Screen name="Perfil" component={Profile} />
+      <Tab.Screen name="Lojas" options={tabOptions} component={Stores} />
+      <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
+      <Tab.Screen name="Perfil" options={tabOptions}  component={Profile} />
     </Tab.Navigator>
   );
 }
