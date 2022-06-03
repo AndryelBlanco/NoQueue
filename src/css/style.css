@@ -1,0 +1,242 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body{
+    /* Wallet-Screen */
+    width: 428px;
+    height: 926px;
+    overflow-y: scroll;
+    border-radius: 25px;
+    background: #EEEEEE;
+}
+
+ /* Topo  */
+#topo-minha-carteira {
+    box-sizing: border-box;
+    width: 396px;
+    height: 60px;
+
+    position: absolute;
+    left: 16px;
+    
+    right: 3.74%;
+    top: 3.56%;
+    bottom: 89.96%;
+
+    background: #0057FF;
+    border: 2px solid #3793FF;
+    box-shadow: 0px 36px 80px rgba(0, 0, 0, 0.05), 0px 15.0399px 33.4221px rgba(0, 0, 0, 0.0359427), 0px 8.04107px 17.869px rgba(0, 0, 0, 0.0298054), 0px 4.50776px 10.0172px rgba(0, 0, 0, 0.025), 0px 2.39404px 5.32008px rgba(0, 0, 0, 0.0201946), 0px 0.996212px 2.21381px rgba(0, 0, 0, 0.0140573);
+    border-radius: 12px;
+}
+
+/* Logo carteira */
+#topo-minha-carteira img{
+    position: absolute;
+    width: 38.4px;
+    height: 28.8px;
+    left: 4.8px;
+    top: 14.6px;
+    padding-left: 10px;
+    margin-left: 16px;
+}
+
+/* Minha Carteira */
+#topo-minha-carteira h3{
+    width: 168px;
+    height: 29px;
+    padding-left: 80px;
+    margin: 14px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+/* identical to box height */
+
+    color: #FFFFFF;
+
+/* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Container saldo */
+#container-saldo {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 394px;
+    height: 107px;
+    left: 16px;
+    top: 120px;
+
+    background: linear-gradient(93.6deg, #FFFFFF 2.84%, #ECECEC 102.73%);
+    border: 1.8px solid #F8F8F8;
+    box-shadow: 0px 110px 80px rgba(0, 0, 0, 0.17), 0px 40.1518px 29.2013px rgba(0, 0, 0, 0.117297), 0px 19.493px 14.1767px rgba(0, 0, 0, 0.0945694), 0px 9.55581px 6.94968px rgba(0, 0, 0, 0.0754306), 0px 3.77838px 2.74791px rgba(0, 0, 0, 0.0527031);
+    border-radius: 17px;
+}
+
+/* Saldo disponível */
+#container-saldo h6{
+    position: absolute;
+    width: 139px;
+    height: 22px;
+    left: 37px;
+    top: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+/* identical to box height */
+
+    color: #787878;
+}
+
+/* R$ 999,99*/
+#container-saldo a{
+    position: absolute;
+    width: 158px;
+    height: 39px;
+    left: 37px;
+    top: 40px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-decoration: none;
+/* identical to box height */
+
+    color: #00CD6B;
+}
+
+/* Botão + */
+#button {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    left: 315px;
+    top: 30px;
+
+    background: #00CD6B;
+    border-radius: 3px;
+}
+
+/* + */
+#button img {
+   margin: 13px;
+}  
+
+/* Histórico */
+div h5{
+    width: 104px;
+    height: 29px;
+    margin-top: 280px;
+    margin-left: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+/* identical to box height */
+
+    color: #0057FF;
+
+/* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+/* Cards */
+.container-card {
+    box-sizing: border-box;
+    margin: 16px;
+/* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 29px 16px;  
+    gap: 10px;
+
+    width: 389px;
+    height: 106px;
+
+    background: linear-gradient(93.6deg, #0075FF 2.84%, #002978 102.73%);
+    border: 1.8px solid #FFFFFF;
+    border-radius: 17px;
+
+/* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+/* Icone seta */
+.container-card img{
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    
+    left: 55px;
+    right: 9.58%;
+}
+
+ /* Valor */
+.container-card .value {
+    width: 117px;
+    height: 29px;
+    margin: 7px;
+    padding-left: 70px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-decoration: none;
+/* identical to box height */
+
+    color: #FFFFFF;
+
+/* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;   
+}
+
+/* Data */
+.container-card .date {
+    width: 79px;
+    height: 22px;
+    margin-left: 280px;
+    margin-top: -44px;
+    
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+/* identical to box height */
+
+    color: #FFFFFF;
+
+/* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
