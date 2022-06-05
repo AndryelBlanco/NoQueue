@@ -3,6 +3,7 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import { UserImage, ProfilePageContainer, UserView, Username, UsernameView, Options, OptionsIcon, OptionsTextView, OptionsText } from './Styled_Profile';
 
 
+
 const Profile = () => {
 
 
@@ -20,7 +21,7 @@ const Profile = () => {
 
       <Options>
 
-        <OptionsIcon source={require('../../../assets/icons/sair.svg')}/>
+      <OptionsIcon />
 
         <OptionsTextView>
           <OptionsText>
