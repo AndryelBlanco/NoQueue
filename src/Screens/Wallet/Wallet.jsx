@@ -1,14 +1,19 @@
 import React, { useContext } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native';
+import { PageTitle, Title, WalletPageContainer } from './Styled_wallet';
 
 
 const Wallet = () => {
 
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Minha carteira!</Text>
-    </View>
+    <WalletPageContainer>
+        <PageTitle>
+            <Title>
+                Minha Carteira
+            </Title>
+        </PageTitle>
+    </WalletPageContainer>
   );
 }
 
