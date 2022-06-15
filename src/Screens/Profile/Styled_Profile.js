@@ -44,7 +44,7 @@ border-radius: 12px;
 
 `;
 
-export const Options = styled.View`
+export const Options = styled.TouchableOpacity`
 border-radius: 12px;
 background-color: white;
 height: 60px;
@@ -54,9 +54,10 @@ flex-direction: row;
 align-items: center;
 margin-top: 20px;
 
+
 `;
 
-export const OptionsIcon = styled.Image`
+export const OptionsIcon = styled.View`
 margin: 0 15px 0 20px;
 `;
 
