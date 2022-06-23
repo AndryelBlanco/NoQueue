@@ -53,8 +53,6 @@ display: flex;
 flex-direction: row;
 align-items: center;
 margin-top: 20px;
-
-
 `;
 
 export const OptionsIcon = styled.View`
