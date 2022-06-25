@@ -1,15 +1,23 @@
 import { BarCodeScanner } from 'expo-barcode-scanner';
-import React, { useEffect, useState } from 'react'
-import { Button, Dimensions, StyleSheet, Text, View } from 'react-native';
-import { ScannerView } from './Styled_Scanner';
+import { Camera } from 'expo-camera';
+import React, { useEffect, useRef, useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { ScannerBarAnimated, ScannerMockArea, ScannerView } from './Styled_Scanner';
+import * as Animatable from "react-native-animatable";
+import RBSheet from 'react-native-raw-bottom-sheet';
+import { useIsFocused } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-web';
 
 
-const { width } = Dimensions.get('window')
-const qrSize = width * 0.7
 
-function Scanner({ setData }) {
+function Scanner({ setData, handleChange }) {
+
+  const refRBSheet = useRef();
+  const isFocused = useIsFocused();
+
+
   const [hasPermission, setHasPermission] = useState(null);
-  const [scanned, setScanned] = useState(false);
+  const [scanned, setScanned] = useState(true);
   const [scannedData, setScannedData] = useState(null) 
 
   useEffect(() => {
@@ -19,11 +27,6 @@ function Scanner({ setData }) {
     })();
   }, []);
 
-  const handleBarCodeScanned = ({ type, data }) => {
-    setScanned(true);
-    setScannedData(data)
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-  };
 
   if (hasPermission === null) {
     return <Text>Requesting for camera permission</Text>;
@@ -32,15 +35,25 @@ function Scanner({ setData }) {
     return <Text>No access to camera</Text>;
   }
 
+  
 
   return (
     <ScannerView>
-      <BarCodeScanner
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={StyleSheet.absoluteFill} 
-      />
-      <Text>Scanned Datas: {scannedData != null ? scannedData : 'no data scanned!'}</Text>
-      {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
+      {isFocused ? (
+        <Camera
+          onBarCodeScanned={() => handleChange()}
+          style={StyleSheet.absoluteFill} 
+        />
+      ):
+        null
+      }
+      <ScannerMockArea  source={require('./MockScan.png')} style={{opacity: .6}}/>
+      <Animatable.View  animation="slideInDown" delay={500} iterationCount="infinite" direction="alternate" style={{ display: 'flex', alignItems: 'center'}}>
+        <ScannerBarAnimated>
+        </ScannerBarAnimated>
+      </Animatable.View>
+      {/* <Text>Scanned Datas: {scannedData != null ? scannedData : 'no data scanned!'}</Text>
+      {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />} */}
     </ScannerView>
   );
 }

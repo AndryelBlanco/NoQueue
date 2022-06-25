@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from 'react'
-import { FlatList, Text, TouchableOpacity, View, SafeAreaView, StyleSheet, Image } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View, SafeAreaView, StyleSheet, Image, Button } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import StoreItem from '../../Components/StoreItem/StoreItem';
 import { StoreSubTextModal, StoreInfoContainer, StoreLogo, StoreModalContainer, StoreTitleModal, SubInfo } from './Styled_Stores';
@@ -7,7 +7,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import PageTitle from '../../Components/PageTitle/PageTitle';
 
 
-const Stores = () => {
+const Stores = ({navigation }) => {
 
   const refRBSheet = useRef();
 
@@ -143,7 +143,9 @@ const Stores = () => {
               }}
             />
             <StoreInfoContainer>
-              <StoreTitleModal>{storeSelected.title}</StoreTitleModal>
+              <StoreTitleModal>
+                {storeSelected.title}
+              </StoreTitleModal>
               <SubInfo>
                 <MaterialCommunityIcons name={'map-marker-outline'} color={'#898989'} />
                 <StoreSubTextModal>Av. Ibicuí 581</StoreSubTextModal>
