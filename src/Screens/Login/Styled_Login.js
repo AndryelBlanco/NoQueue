@@ -73,6 +73,7 @@ font-size: 16px;
 
 
 export const ForgotPassword = styled.Text`
+font-size:16px;
 color: white;
 text-align:center;
 `;
@@ -120,4 +121,9 @@ export const LoginText = styled.Text`
 text-align:center;
 font-size:16px;
 color:white;
+`;
+
+export const SignUpLink = styled.Text`
+color:white;
+font-size:16px;
 `;

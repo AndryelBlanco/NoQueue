@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Text, TouchableOpacity, View, TextInput, Button, StyleSheet } from 'react-native';
-import { MainContainer, ViewImgLogo, ImgLogo, FlexItem, Title, FormSignUp, Input, LoginButton, ForgotPassword, AlternativeLogin, AlternativeLogin2, AltLoginText, LoginBtn, LoginText } from './Styled_Login';
+import { MainContainer, ViewImgLogo, ImgLogo, FlexItem, Title, FormSignUp, Input, LoginButton, ForgotPassword, AlternativeLogin, AlternativeLogin2, AltLoginText, LoginBtn, LoginText, SignUpLink } from './Styled_Login';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { LinearGradient } from 'expo-linear-gradient';
 import GoogleLogo from '../../../assets/icons/GoogleLogo';
@@ -71,6 +71,13 @@ const Login = () => {
           </AlternativeLogin>
         </FlexItem>
         
+        <FlexItem>
+          <TouchableOpacity activeOpacity={0.2}>
+            <SignUpLink>
+              Não tem uma conta? <Text style={{fontWeight:'bold'}}>Cadastre-se.</Text>
+              </SignUpLink>
+          </TouchableOpacity>
+        </FlexItem>
 
   
       </MainContainer>
