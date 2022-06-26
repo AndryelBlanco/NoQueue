@@ -1,9 +1,12 @@
 import React, { useContext } from 'react'
 import { Text, TouchableOpacity, View, TextInput, Button, StyleSheet } from 'react-native';
-import { MainContainer, ViewImgLogo, ImgLogo, FlexItem, Title, FormSignUp, Input, LoginButton, ForgotPassword, AlternativeLogin, AlternativeLogin2, AltLoginText } from './Styled_Login';
+import { MainContainer, ViewImgLogo, ImgLogo, FlexItem, Title, FormSignUp, Input, LoginButton, ForgotPassword, AlternativeLogin, AlternativeLogin2, AltLoginText, LoginBtn, LoginText } from './Styled_Login';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Svg, { Path } from 'react-native-svg';
 import { LinearGradient } from 'expo-linear-gradient';
+import GoogleLogo from '../../../assets/icons/GoogleLogo';
+import FacebookLogo from '../../../assets/icons/FacebookLogo';
+import NoQueueLogo from '../../../assets/icons/AppLogo';
+
 
 
 
@@ -11,16 +14,17 @@ import { LinearGradient } from 'expo-linear-gradient';
 const Login = () => {
   return (
 
-    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
+    <LinearGradient colors={['#00FFF0', '#002249']}>
 
      
       <MainContainer >
 
         <FlexItem>
           <ViewImgLogo>
-            <ImgLogo
+            {/* <ImgLogo
             source={require('../../../assets/icons/AppLogo.png')}
-            />
+            /> */}
+            <NoQueueLogo/>
           </ViewImgLogo>
         </FlexItem>
 
@@ -31,11 +35,14 @@ const Login = () => {
             <Title>Bem-vindo!</Title>
             <Input placeholder='Email'/>
             <Input placeholder='Senha'/>
-            <Button
+            {/* <Button
             title='Log in'
             color='#0057FF'
-            />
+            /> */}
 
+            <LoginBtn activeOpacity={0.5}>
+              <LoginText>Login</LoginText>
+            </LoginBtn>
           </FormSignUp>
 
         </FlexItem>
@@ -51,18 +58,24 @@ const Login = () => {
         <FlexItem>
           <AlternativeLogin>
             <AlternativeLogin2>
-            <Icon name='google' size={20} color='white'/>
+
+            <GoogleLogo/>
             <AltLoginText>Google</AltLoginText>
             </AlternativeLogin2>
 
             <AlternativeLogin2>
-            <Icon name='facebook' size={20} color='white' />
+              <FacebookLogo/>
+            {/* <Icon name='facebook' size={24} color='white' /> */}
               <AltLoginText>Facebook</AltLoginText>
             </AlternativeLogin2>
           </AlternativeLogin>
         </FlexItem>
+        
 
+  
       </MainContainer>
+
+
 
       </LinearGradient>
   );

@@ -46,7 +46,7 @@ flex-direction: column;
 
 export const Title = styled.Text`
 font-size: 23px;
-color:black;
+color:white;
 
 `;
 export const Input = styled.TextInput`
@@ -54,6 +54,7 @@ margin: 5px auto;
 padding: 10px 5px;
 border-radius: 10px;
 width: 250px;
+background-color:white;
 border: 1px solid gray;
 `;
 
@@ -72,7 +73,7 @@ font-size: 16px;
 
 
 export const ForgotPassword = styled.Text`
-color: black;
+color: white;
 text-align:center;
 `;
 
@@ -100,5 +101,23 @@ height:  42px;
 
 export const AltLoginText = styled.Text`
 margin-left:5px;
+color:white;
+`;
+
+export const LoginBtn = styled.TouchableOpacity`
+
+margin: 10px auto 5px auto;
+padding: 10px 5px;
+border-radius: 10px;
+width: 250px;
+background-color:#0057FF;
+
+
+
+`;
+
+export const LoginText = styled.Text`
+text-align:center;
+font-size:16px;
 color:white;
 `;
