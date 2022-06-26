@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
-import { Text, TouchableOpacity, View, TextInput, Button, StyleSheet } from 'react-native';
-import { MainContainer, ViewImgLogo, ImgLogo, FlexItem, Title, FormSignUp, Input, LoginButton, ForgotPassword, AlternativeLogin, AlternativeLogin2, AltLoginText, LoginBtn, LoginText, SignUpLink } from './Styled_Login';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Text, TouchableOpacity, View, TextInput } from 'react-native';
+import { MainContainer, ViewImgLogo, ImgLogo, FlexItem, Title, FormLogin, Input, ForgotPassword, AlternativeLogin, AlternativeLogin2, AltLoginText, LoginBtn, LoginText, SignUpLink } from './Styled_Login';
 import { LinearGradient } from 'expo-linear-gradient';
 import GoogleLogo from '../../../assets/icons/GoogleLogo';
 import FacebookLogo from '../../../assets/icons/FacebookLogo';
@@ -21,29 +20,22 @@ const Login = () => {
 
         <FlexItem>
           <ViewImgLogo>
-            {/* <ImgLogo
-            source={require('../../../assets/icons/AppLogo.png')}
-            /> */}
             <NoQueueLogo/>
           </ViewImgLogo>
         </FlexItem>
 
 
         <FlexItem>
-          <FormSignUp>
+          <FormLogin>
 
             <Title>Bem-vindo!</Title>
-            <Input placeholder='Email'/>
-            <Input placeholder='Senha' secureTextEntry={true} password={true}/>
-            {/* <Button
-            title='Log in'
-            color='#0057FF'
-            /> */}
+            <Input placeholder='Email' placeholderTextColor='white' color='white'/>
+            <Input placeholder='Senha' secureTextEntry={true} password={true} placeholderTextColor='white' color='white'/>
 
             <LoginBtn activeOpacity={0.5}>
               <LoginText>Login</LoginText>
             </LoginBtn>
-          </FormSignUp>
+          </FormLogin>
 
         </FlexItem>
 

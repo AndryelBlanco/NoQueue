@@ -11,6 +11,7 @@ import Stores from './src/Screens/Stores/Stores';
 import Profile from './src/Screens/Profile/Profile';
 import ScannerPage from './src/Screens/Scanner/ScannerPage';
 import Login from './src/Screens/Login/Login';
+import SignUp from './src/Screens/SignUp/SignUp';
 
 const Tab = createBottomTabNavigator();
 
@@ -42,7 +43,7 @@ function MyTabs() {
         tabBarInactiveTintColor: 'gray',
         })}
       >
-      <Tab.Screen name="Lojas" options={tabOptions} component={Login  } />
+      <Tab.Screen name="Lojas" options={tabOptions} component={SignUp} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
       <Tab.Screen name="Perfil" options={tabOptions}  component={Profile} />
     </Tab.Navigator>

@@ -17,7 +17,6 @@ margin: 0;
 padding: 0;
 border: 0;
 box-sizing: border-box;
-
 `;
 
 export const FlexItem = styled.View`
@@ -38,7 +37,7 @@ width:150px;
 height:150px;
 `;
 
-export const FormLogin = styled.View`
+export const FormSignUp = styled.View`
 display: flex;
 width: 100%;
 align-items: center;
@@ -59,18 +58,20 @@ height:40px;
 border: 1px solid white;
 `;
 
-export const LoginBtn = styled.TouchableOpacity`
+
+
+export const CreateAccountBtn = styled.TouchableOpacity`
 
 margin: 10px auto 5px auto;
 padding: 10px 5px;
 border-radius: 10px;
 width: 250px;
-;.,..;;
+height:40px;
 background-color:#0057FF;
 
 
-`;
 
+`;
 
 
 export const ForgotPassword = styled.Text`
@@ -101,20 +102,13 @@ height:  42px;
 }
 `;
 
-export const AltLoginText = styled.Text`
-margin-left:5px;
-color:white;
-`;
 
 
 
-export const LoginText = styled.Text`
+export const CreateAccountText = styled.Text`
 text-align:center;
 font-size:16px;
 color:white;
 `;
 
-export const SignUpLink = styled.Text`
-color:white;
-font-size:16px;
-`;
+
