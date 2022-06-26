@@ -34,7 +34,7 @@ const Login = () => {
 
             <Title>Bem-vindo!</Title>
             <Input placeholder='Email'/>
-            <Input placeholder='Senha'/>
+            <Input placeholder='Senha' secureTextEntry={true} password={true}/>
             {/* <Button
             title='Log in'
             color='#0057FF'
