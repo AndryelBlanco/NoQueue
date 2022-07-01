@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const WalletPageContainer = styled.View`
   display: flex;
-  align-items: center;
   height: 100%;
   padding: 4px;
   background-color: #EEEEEE;
