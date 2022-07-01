@@ -47,6 +47,7 @@ flex-direction: column;
 export const Title = styled.Text`
 font-size: 23px;
 color:white;
+margin-bottom:10px;
 
 `;
 export const Input = styled.TextInput`

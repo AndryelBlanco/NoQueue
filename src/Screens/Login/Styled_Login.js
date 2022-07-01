@@ -48,6 +48,7 @@ flex-direction: column;
 export const Title = styled.Text`
 font-size: 23px;
 color:white;
+margin-bottom:10px;
 
 `;
 export const Input = styled.TextInput`
@@ -76,10 +77,13 @@ background-color:#0057FF;
 export const ForgotPassword = styled.Text`
 font-size:16px;
 color: white;
+margin-bottom: -15px;
 text-align:center;
 `;
 
-
+export const ForgotPasswordTouchableOpacity = styled.TouchableOpacity`
+display:inline;
+`;
 
 export const AlternativeLogin = styled.View`
 display: flex;
@@ -117,4 +121,5 @@ color:white;
 export const SignUpLink = styled.Text`
 color:white;
 font-size:16px;
+
 `;
