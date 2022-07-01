@@ -43,6 +43,9 @@ const TabNavigator = () => {
         options={{
           headerShown: false,
           tabBarButton: () => null,
+          tabBarStyle: {
+            display: 'none'
+          },
           tabBarVisible: false, // if you don't want to see the tab bar
         }}
       />

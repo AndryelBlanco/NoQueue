@@ -1,17 +1,12 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import { CheckoutView, ProductImageContainer, ProductImageView } from './Styled_ProductCheckout';
+import { CheckoutView, ProductImageContainer, ProductImageView, ProductPrice, ProductPriceInformations, ProductTitle } from './Styled_ProductCheckout';
 
 
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
-const IMAGES = {
-  image1: require('../../images/products/headset1.png'),
-  image2: require('../../images/products/headset2.png'),
-  image3: require('../../images/products/headset3.png'),
-};
 
 const data = [
   {
@@ -73,7 +68,10 @@ const ProductCheckout = () => {
         inactiveDotScale={0.5}
         tappableDots={true}
       />
-      <Text>Lgitech G890</Text>
+      <ProductPriceInformations>
+        <ProductTitle>Logitech G890</ProductTitle> 
+        <ProductPrice>R$ 599,99</ProductPrice> 
+      </ProductPriceInformations>
     </CheckoutView>
   )
 }
