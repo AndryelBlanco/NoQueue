@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Text, TouchableOpacity, View, TextInput, Button, StyleSheet, KeyboardAvoidingView} from 'react-native';
+import { Text, TouchableOpacity, View, TextInput, Button, StyleSheet, KeyboardAvoidingView, TouchableHighlight} from 'react-native';
 import { MainContainer, ViewImgLogo, FlexItem, Title, FormSignUp, Input,  CreateAccountBtn, CreateAccountText } from './Styled_SignUp';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -16,7 +16,7 @@ const SignUp = () => {
 
     
       <LinearGradient colors={['#00FFF0', '#002249']}>    
-      <KeyboardAvoidingView behavior="padding" enabled>
+      <KeyboardAvoidingView behavior="position" enabled>
         <MainContainer >
 
           <FlexItem>
@@ -35,9 +35,13 @@ const SignUp = () => {
               placeholder='Nome completo' placeholderTextColor='white' color='white'/>
               <Input placeholder='Email' placeholderTextColor='white' color='white'/>
               <Input placeholder='Senha' secureTextEntry={true} password={true} placeholderTextColor='white' color='white'/>
-              <Input 
-            
-              placeholder='Confirme a sua senha' secureTextEntry={true} password={true} placeholderTextColor='white' color='white'/>
+              <Input  
+              placeholder='Confirme a sua senha'
+              secureTextEntry={true} 
+              password={true} 
+              placeholderTextColor='white' 
+              color='white'
+              />
 
 
               <CreateAccountBtn activeOpacity={0.5}>
