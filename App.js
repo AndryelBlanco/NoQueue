@@ -6,6 +6,10 @@ import { BarCodeScanner } from 'expo-barcode-scanner';
 import { AuthContextProvider } from './src/context/authContext';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+
+
+
+
 import Home from './src/Screens/Home/Home';
 import Stores from './src/Screens/Stores/Stores';
 import Profile from './src/Screens/Profile/Profile';
@@ -43,7 +47,7 @@ function MyTabs() {
         tabBarInactiveTintColor: 'gray',
         })}
       >
-      <Tab.Screen name="Lojas" options={tabOptions} component={Login} />
+      <Tab.Screen name="Lojas" options={tabOptions} component={SignUp} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
       <Tab.Screen name="Perfil" options={tabOptions}  component={Profile} />
     </Tab.Navigator>
@@ -72,3 +76,6 @@ const styles = StyleSheet.create({
     height: 40,
   },
 });
+
+
+
