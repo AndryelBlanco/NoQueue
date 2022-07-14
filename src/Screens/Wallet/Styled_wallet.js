@@ -84,12 +84,3 @@ export const BalanceHistory = styled.Text `
   
   font-weight: 600;
 `;
-
-export const DateHistory = styled.Text `
-  top: 6px;
-  left: 280px;
-  font-size: 16px;
-  color: #FFF;
-  
-  font-weight: 400;
-`;
