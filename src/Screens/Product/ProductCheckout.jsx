@@ -1,40 +1,31 @@
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import { CheckoutView, ProductImageContainer, ProductImageView, ProductPrice, ProductPriceInformations, ProductTitle } from './Styled_ProductCheckout';
+import { CheckoutView, ProductDescription, ProductImageContainer, ProductImageView, ProductPrice, ProductPriceInformations, ProductTitle, SliderView } from './Styled_ProductCheckout';
+import {FlatListSlider} from 'react-native-flatlist-slider';
 
 
-export const SLIDER_WIDTH = Dimensions.get('window').width + 80;
-export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
 
-const data = [
+const images = [
   {
-    title: "Aenean leo",
-    body: "Ut tincidunt tincidunt erat. Sed cursus turpis vitae tortor. Quisque malesuada placerat nisl. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-    imgUrl: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/9/8/981-0007556.jpg'
+   image: require('../../images/products/Headset/headset1.png'),
   },
-  {
-    title: "In turpis",
-    body: "Aenean ut eros et nisl sagittis vestibulum. Donec posuere vulputate arcu. Proin faucibus arcu quis ante. Curabitur at lacus ac velit ornare lobortis. ",
-    imgUrl: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/9/8/981-0007554.jpg',
+ {
+   image:require('../../images/products/Headset/headset2.png'),
+ },
+ {
+  image:require('../../images/products/Headset/headset3.png'),
   },
-  {
-    title: "Lorem Ipsum",
-    body: "Phasellus ullamcorper ipsum rutrum nunc. Nullam quis ante. Etiam ultricies nisi vel augue. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc.",
-    imgUrl: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/9/8/981-000755.jpg',
-  },
-];
+ ]
 
-const CarouselCardItem = ({ item, index }) => {
-  return (
-    <ProductImageContainer key={index}>
-      <ProductImageView
-        source={{ uri: item.imgUrl }}
-      />
-    </ProductImageContainer>
-  )
-}
+
+const styles = StyleSheet.create({
+  contentContainer: {
+    paddingVertical: 20,
+    marginTop: 20,
+  }
+});
 
 const ProductCheckout = () => {
   const isCarousel = React.useRef(null)
@@ -42,40 +33,40 @@ const ProductCheckout = () => {
 
 
   return (
-    <CheckoutView>
-      <Carousel
-        layout="default"
-        ref={isCarousel}
-        data={data}
-        activeSlideOffset={10}
-        renderItem={CarouselCardItem}
-        sliderWidth={SLIDER_WIDTH}
-        itemWidth={ITEM_WIDTH}
-        onSnapToItem={(index) => setIndex(index)}
-      />
-      <Pagination
-        dotsLength={data.length}
-        activeDotIndex={index}
-        carouselRef={isCarousel}
-        dotStyle={{
-          width: 8,
-          height: 8,
-          borderRadius: 5,
-          marginHorizontal: 0,
-          backgroundColor: '#1582ff'
-        }}
-        inactiveDotOpacity={0.3}
-        inactiveDotScale={0.5}
-        tappableDots={true}
-      />
-      <ProductPriceInformations>
-        <ProductTitle>Logitech G890</ProductTitle> 
-        <ProductPrice>R$ 599,99</ProductPrice> 
-      </ProductPriceInformations>
-    </CheckoutView>
+   
+      <CheckoutView>
+            
+        <ScrollView contentContainerStyle={styles.contentContainer} endFillColor='red' showsVerticalScrollIndicator={false}> 
+        <SliderView>
+          <FlatListSlider 
+            data={images} 
+            height={380}
+            width={320}
+            imageKey={'image'}
+            local
+            autoscroll={false}
+            timer={5000}
+          />
+        </SliderView>
+          <ProductPriceInformations>
+            <ProductTitle>Logitech G890</ProductTitle> 
+            <ProductPrice>R$ 599,99</ProductPrice>
+            <ProductDescription>
+              Versátil: O G435 é o primeiro headset gamer com conexão sem fio LIGHTSPEED e Bluetooth de baixa latência, oferecendo mais liberdade de jogo no PC, celular e dispositivos de jogos PlayStation.
+              Leve: Com uma construção leve, este headset gamer sem fio pesa apenas 165 g, tornando-o confortável de usar durante o dia todo.
+              Qualidade de voz superior: Seja ouvido em alto e bom som graças aos microfones integrados de formação de feixe duplo que eliminam a necessidade de um braço de microfone e reduzem o ruído de fundo.
+              Som envolvente: Este headset moderno e colorido oferece áudio de alta fidelidade balanceado com drivers de 40 mm, compatibilidade com Dolby Atmos e Windows Sonic para uma experiência de som envolvente.
+              Bateria de longa duração: Não precVersátil: O G435 é o primeiro headset gamer com conexão sem fio LIGHTSPEED e Bluetooth de baixa latência, oferecendo mais liberdade de jogo no PC, celular e dispositivos de jogos PlayStation.
+              Leve: Com uma construção leve, este headset gamer sem fio pesa apenas 165 g, tornando-o confortável de usar durante o dia todo.
+              Qualidade de voz superior: Seja ouvido em alto e bom som graças aos microfones integrados de formação de feixe duplo que eliminam a necessidade de um braço de microfone e reduzem o ruído de fundo.
+              Som envolvente: Este headset moderno e colorido oferece áudio de alta fidelidade balanceado com drivers de 40 mm, compatibilidade com Dolby Atmos e Windows Sonic para uma experiência de som envolvente.
+              Bateria de longa duração: Não precisa interromper os jogos para recarregar graças à bateria de até 18h do G435, permitindo que você continue jogando, conversando com amigos e ouvindo música.  
+            </ProductDescription> 
+          </ProductPriceInformations>
+        </ScrollView> 
+      </CheckoutView>
   )
 }
-
 
 
 export default ProductCheckout

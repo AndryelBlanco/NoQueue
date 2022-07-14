@@ -18,4 +18,4 @@ const StackNavigator = ({ navigation }) => {
  );
 };
 
-export default StackNavigator;
+export default StackNavigator; 
