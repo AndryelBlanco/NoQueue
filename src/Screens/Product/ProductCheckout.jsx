@@ -1,11 +1,8 @@
 import React from 'react';
-import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Carousel, { Pagination } from 'react-native-snap-carousel';
-import { CheckoutView, ProductDescription, ProductImageContainer, ProductImageView, ProductPrice, ProductPriceInformations, ProductTitle, SliderView } from './Styled_ProductCheckout';
+import { ScrollView, StyleSheet, } from 'react-native';
+import { ButtonCheckout, CheckoutView, DefaultText, ProductDescription, ProductImageContainer, ProductImageView, ProductPrice, ProductPriceInformations, ProductTitle, SliderView } from './Styled_ProductCheckout';
 import {FlatListSlider} from 'react-native-flatlist-slider';
-
-
-
+import Icon from 'react-native-vector-icons/Octicons';
 
 const images = [
   {
@@ -24,7 +21,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingVertical: 20,
     marginTop: 20,
-  }
+  },
 });
 
 const ProductCheckout = () => {
@@ -33,21 +30,19 @@ const ProductCheckout = () => {
 
 
   return (
-   
       <CheckoutView>
-            
-        <ScrollView contentContainerStyle={styles.contentContainer} endFillColor='red' showsVerticalScrollIndicator={false}> 
-        <SliderView>
-          <FlatListSlider 
-            data={images} 
-            height={380}
-            width={320}
-            imageKey={'image'}
-            local
-            autoscroll={false}
-            timer={5000}
-          />
-        </SliderView>
+        <ScrollView contentContainerStyle={styles.contentContainer}  showsVerticalScrollIndicator={false}> 
+          <SliderView>
+            <FlatListSlider 
+              data={images} 
+              height={380}
+              width={320}
+              imageKey={'image'}
+              local
+              autoscroll={false}
+              timer={5000}
+            />
+          </SliderView>
           <ProductPriceInformations>
             <ProductTitle>Logitech G890</ProductTitle> 
             <ProductPrice>R$ 599,99</ProductPrice>
@@ -64,6 +59,12 @@ const ProductCheckout = () => {
             </ProductDescription> 
           </ProductPriceInformations>
         </ScrollView> 
+          <ButtonCheckout activeOpacity={0.765}> 
+            <DefaultText>
+              Fazer Checkout
+            </DefaultText>
+            <Icon name='arrow-right' size={18} color="#fff" />
+          </ButtonCheckout>
       </CheckoutView>
   )
 }

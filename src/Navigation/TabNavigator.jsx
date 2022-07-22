@@ -36,7 +36,7 @@ const TabNavigator = () => {
         tabBarInactiveTintColor: 'gray',
         })}
       >
-      <Tab.Screen name="Lojas" options={tabOptions} component={ProductCheckout} />
+      <Tab.Screen name="Lojas" options={tabOptions} component={Stores} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
       <Tab.Screen name="Minha Conta" options={tabOptions}  component={Profile} />
       <Tab.Screen name="Checkout" component={ProductCheckout} 
@@ -44,7 +44,7 @@ const TabNavigator = () => {
           headerShown: false,
           tabBarButton: () => null,
           tabBarStyle: {
-            display: 'none '
+            display: "none",
           },
           tabBarVisible: false, // if you don't want to see the tab bar
         }}

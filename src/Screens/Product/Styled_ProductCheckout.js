@@ -58,6 +58,34 @@ export const SliderView = styled.View`
 
   width: 100%;
   height: 38%;
-  background-color: red;
+  background-color: #fff;
+`;
 
+export const ButtonCheckout = styled.TouchableOpacity`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 50px;
+
+  background-color: #0057FF;
+  border-radius: 10px;
+
+  shadowColor: "#000";
+  shadowOffset:{
+  width: 0;
+  height: 9;
+  };
+  shadowOpacity: 1;
+  shadowRadius: 1;
+  elevation: 10;
+
+`;
+
+export const DefaultText = styled.Text`
+  color: #fff;
+  font-size: 14px;
+  margin-right: 10px;
 `;
