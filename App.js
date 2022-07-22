@@ -47,7 +47,7 @@ function MyTabs() {
         tabBarInactiveTintColor: 'gray',
         })}
       >
-      <Tab.Screen name="Lojas" options={tabOptions} component={SignUp} />
+      <Tab.Screen name="Lojas" options={tabOptions} component={Login} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
       <Tab.Screen name="Perfil" options={tabOptions}  component={Profile} />
     </Tab.Navigator>

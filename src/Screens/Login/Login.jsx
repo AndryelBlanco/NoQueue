@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import GoogleLogo from '../../../assets/icons/GoogleLogo';
 import FacebookLogo from '../../../assets/icons/FacebookLogo';
 import NoQueueLogo from '../../../assets/icons/AppLogo';
+import signIn from '../../context/authContext'
 
 
 
@@ -12,6 +13,11 @@ import NoQueueLogo from '../../../assets/icons/AppLogo';
 
 
 const Login = () => {
+
+  function handleLogin() {
+    signIn('email', 'senha')
+  }
+
   return (
 
     <LinearGradient colors={['#00FFF0', '#002249']}>
@@ -56,8 +62,13 @@ const Login = () => {
                   Não tem uma conta?
                 </SignUpLink>
         
-                  <TouchableOpacity activeOpacity={0.2}>
+                  <TouchableOpacity 
+                  activeOpacity={0.2}
+                  onPress={handleLogin}
+                  >
+
                     <SignUpLink  style={{fontWeight: 'bold'}}> Cadastre-se.</SignUpLink>
+
                   </TouchableOpacity>
         
               </View>
