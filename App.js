@@ -7,17 +7,14 @@ import { AuthContextProvider } from './src/context/authContext';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
-
-
-
 import Home from './src/Screens/Home/Home';
 import Stores from './src/Screens/Stores/Stores';
 import Profile from './src/Screens/Profile/Profile';
 import ScannerPage from './src/Screens/Scanner/ScannerPage';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabNavigator from './src/Navigation/TabNavigator';
-import Login from './src/Screens/Login/Login';
-import SignUp from './src/Screens/SignUp/SignUp';
+
+import Login from './src/Screens/Login/Login'
 
 const Tab = createBottomTabNavigator();
 

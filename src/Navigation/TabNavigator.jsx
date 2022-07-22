@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Login from '../Screens/Login/Login';
 import ProductCheckout from '../Screens/Product/ProductCheckout';
 import Profile from '../Screens/Profile/Profile';
 import ScannerPage from '../Screens/Scanner/ScannerPage';
@@ -36,7 +37,7 @@ const TabNavigator = () => {
         tabBarInactiveTintColor: 'gray',
         })}
       >
-      <Tab.Screen name="Lojas" options={tabOptions} component={Stores} />
+      <Tab.Screen name="Lojas" options={tabOptions} component={Login} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
       <Tab.Screen name="Minha Conta" options={tabOptions}  component={Profile} />
       <Tab.Screen name="Checkout" component={ProductCheckout} 
