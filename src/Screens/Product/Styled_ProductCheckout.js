@@ -88,4 +88,21 @@ export const DefaultText = styled.Text`
   color: #fff;
   font-size: 14px;
   margin-right: 10px;
+  margin-bottom: 3px;
+`;
+
+export const GoBackButton = styled.TouchableOpacity`
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  background-color: #FF3949;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
 `;

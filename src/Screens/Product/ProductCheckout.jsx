@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, } from 'react-native';
-import { ButtonCheckout, CheckoutView, DefaultText, ProductDescription, ProductImageContainer, ProductImageView, ProductPrice, ProductPriceInformations, ProductTitle, SliderView } from './Styled_ProductCheckout';
+import { ButtonCheckout, CheckoutView, DefaultText, GoBackButton, ProductDescription, ProductImageContainer, ProductImageView, ProductPrice, ProductPriceInformations, ProductTitle, SliderView } from './Styled_ProductCheckout';
 import {FlatListSlider} from 'react-native-flatlist-slider';
 import Icon from 'react-native-vector-icons/Octicons';
 
@@ -24,14 +24,20 @@ const styles = StyleSheet.create({
   },
 });
 
-const ProductCheckout = () => {
+const ProductCheckout = ({ navigation }) => {
   const isCarousel = React.useRef(null)
   const [index, setIndex] = React.useState(0)
 
+  function handleGoBack(){
+    navigation.navigate('Scanner');    
+  }
 
   return (
       <CheckoutView>
         <ScrollView contentContainerStyle={styles.contentContainer}  showsVerticalScrollIndicator={false}> 
+        <GoBackButton activeOpacity={0.765} onPress={handleGoBack}> 
+          <Icon name='arrow-left' size={18} color="#fff" />
+        </GoBackButton>
           <SliderView>
             <FlatListSlider 
               data={images} 
@@ -41,6 +47,7 @@ const ProductCheckout = () => {
               local
               autoscroll={false}
               timer={5000}
+              onPress={() => console.log('ok')}
             />
           </SliderView>
           <ProductPriceInformations>
@@ -65,6 +72,7 @@ const ProductCheckout = () => {
             </DefaultText>
             <Icon name='arrow-right' size={18} color="#fff" />
           </ButtonCheckout>
+          
       </CheckoutView>
   )
 }
