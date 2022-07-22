@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Text, TouchableOpacity, View, TextInput, KeyboardAvoidingView, Button, TouchableHighlight } from 'react-native';
 import { MainContainer, ViewImgLogo, ImgLogo, FlexItem, Title, FormLogin, Input, ForgotPassword, AlternativeLogin, AlternativeLogin2, AltLoginText, LoginBtn, LoginText, SignUpLink } from './Styled_Login';
 import { LinearGradient } from 'expo-linear-gradient';
 import GoogleLogo from '../../../assets/icons/GoogleLogo';
 import FacebookLogo from '../../../assets/icons/FacebookLogo';
 import NoQueueLogo from '../../../assets/icons/AppLogo';
-import signIn from '../../context/authContext'
+import { handleSignIn, handleSignUp,  signInWithGoogle } from '../../config/firebase';
 
 
 
@@ -14,8 +14,19 @@ import signIn from '../../context/authContext'
 
 const Login = () => {
 
+  const [userEmail, setUserEmail] = useState('');
+
+  useEffect(() => {
+    console.log('EMAIL:', userEmail)
+  }, [userEmail])
+
   function handleLogin() {
-    signIn('email', 'senha')
+    // signIn('email', 'senha')
+    console.log("email", userEmail)
+  }
+
+  function handleLoginWithGoogle(){
+    handleSignIn('andryelteste@gmail.com', 'batata')
   }
 
   return (
@@ -25,28 +36,23 @@ const Login = () => {
      
       <KeyboardAvoidingView behavior='position'>
         <MainContainer >
-
-      
-
           <FlexItem>
               <ViewImgLogo>
                 <NoQueueLogo/>
               </ViewImgLogo>        
           </FlexItem>
-
           <FlexItem>
             <FormLogin>
               <Title>Bem-vindo!</Title>
-              <Input placeholder='Email' placeholderTextColor='white' color='white'/>
+              <Input placeholder='Email' placeholderTextColor='white' color='white' value={userEmail} onChangeText={text => setUserEmail(text)}/>
               <Input 
-              placeholder='Senha'
-               secureTextEntry={true} 
-               password={true} 
-               placeholderTextColor='white'
+                placeholder='Senha'
+                secureTextEntry={true} 
+                password={true} 
+                placeholderTextColor='white'
                 color='white'
-
-                />
-              <LoginBtn activeOpacity={0.5}>
+              />
+              <LoginBtn activeOpacity={0.5} onPress={handleLogin}>
                 <LoginText>Login</LoginText>
               </LoginBtn>
             </FormLogin>
@@ -64,7 +70,6 @@ const Login = () => {
         
                   <TouchableOpacity 
                   activeOpacity={0.2}
-                  onPress={handleLogin}
                   >
 
                     <SignUpLink  style={{fontWeight: 'bold'}}> Cadastre-se.</SignUpLink>
@@ -75,9 +80,9 @@ const Login = () => {
           </FlexItem>
           <FlexItem>
             <AlternativeLogin>
-              <AlternativeLogin2>
-              <GoogleLogo/>
-              <AltLoginText>Google</AltLoginText>
+              <AlternativeLogin2 onPress={handleLoginWithGoogle}>
+                <GoogleLogo/>
+                <AltLoginText>Google</AltLoginText>
               </AlternativeLogin2>
               <AlternativeLogin2>
                 <FacebookLogo/>
