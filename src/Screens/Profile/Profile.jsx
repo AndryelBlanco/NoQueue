@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { UserImage, ProfilePageContainer, UserView, Username, UsernameView, Options, OptionsIcon, OptionsTextView, OptionsText } from './Styled_Profile';
 import Svg, { Path } from 'react-native-svg';
 import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
+
 
 
 
