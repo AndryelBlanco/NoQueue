@@ -21,7 +21,7 @@ box-sizing: border-box;
 `;
 
 export const FlexItem = styled.View`
-margin:20px;
+margin:15px;
 
 `;
 
@@ -57,7 +57,7 @@ padding: 10px 5px;
 border-radius: 10px;
 width: 250px;
 height:40px;
-border: 1px solid white;
+border: ${props => props.hasActiveWarning ? "1px solid #FF3838" : "1px solid #fff"};
 `;
 
 export const LoginBtn = styled.TouchableOpacity`
@@ -66,10 +66,14 @@ margin: 10px auto 5px auto;
 padding: 10px 5px;
 border-radius: 10px;
 width: 250px;
-;.,..;;
 background-color:#0057FF;
+`;
 
-
+export const WarningText = styled.Text`
+  color: #fff;
+  align-self: flex-start;
+  margin-left: 8px;
+  font-size: 12px;
 `;
 
 
@@ -92,17 +96,17 @@ flex-direction: row;
 `;
 
 export const AlternativeLogin2 = styled.TouchableOpacity`
-display: flex;
-flex-direction:row;
-align-items: center;
-margin: 0 10px;
-justify-content:center;
-border-radius: 10px;
-text-decoration: none;
-background-color: #0057FF;
-width:100px;
-height:  42px;
-}
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  margin: 0 10px;
+  justify-content:center;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: #0057FF;
+  width:100px;
+  height:  42px;
+
 `;
 
 export const AltLoginText = styled.Text`
@@ -119,7 +123,7 @@ color:white;
 `;
 
 export const SignUpLink = styled.Text`
-color:white;
-font-size:16px;
+  color:white;
+  font-size:14px;
 
 `;

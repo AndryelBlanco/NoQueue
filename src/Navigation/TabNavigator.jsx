@@ -15,6 +15,7 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator 
       screenOptions={({ route }) => ({
+      tabBarHideOnKeyboard: true,  
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
         switch(route.name){
@@ -35,8 +36,8 @@ const TabNavigator = () => {
         },
         tabBarActiveTintColor: '#0057FF',
         tabBarInactiveTintColor: 'gray',
-        })}
-      >
+      })}
+    >
       <Tab.Screen name="Lojas" options={tabOptions} component={Login} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
       <Tab.Screen name="Minha Conta" options={tabOptions}  component={Profile} />

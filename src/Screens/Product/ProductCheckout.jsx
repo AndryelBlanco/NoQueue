@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ScrollView, StyleSheet, } from 'react-native';
 import { ButtonCheckout, CheckoutView, DefaultText, GoBackButton, ProductDescription, ProductImageContainer, ProductImageView, ProductPrice, ProductPriceInformations, ProductTitle, SliderView } from './Styled_ProductCheckout';
 import {FlatListSlider} from 'react-native-flatlist-slider';
@@ -16,6 +16,26 @@ const images = [
   },
  ]
 
+ const arrayOfObjects = [
+  {
+    title: 'Logitech G890',
+    description: '',
+    images: [
+      {
+       image: require('../../images/products/Headset/headset1.png'),
+      },
+     {
+       image:require('../../images/products/Headset/headset2.png'),
+     },
+     {
+      image:require('../../images/products/Headset/headset3.png'),
+      },
+     ]
+  },
+  
+ ]
+
+ 
 
 const styles = StyleSheet.create({
   contentContainer: {
@@ -27,6 +47,19 @@ const styles = StyleSheet.create({
 const ProductCheckout = ({ navigation }) => {
   const isCarousel = React.useRef(null)
   const [index, setIndex] = React.useState(0)
+  const [randomNumber, setRandomNumber] = React.useState(0);
+
+  useEffect(() => {
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    const teste = getRandomInt(0, 5);
+    console.log('TESTE', teste)
+    setRandomNumber(teste);
+  }, [])
 
   function handleGoBack(){
     navigation.navigate('Scanner');    
@@ -40,7 +73,7 @@ const ProductCheckout = ({ navigation }) => {
         </GoBackButton>
           <SliderView>
             <FlatListSlider 
-              data={images} 
+              data={images[randomNumber]} 
               height={380}
               width={320}
               imageKey={'image'}

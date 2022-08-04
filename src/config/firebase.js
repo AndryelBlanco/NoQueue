@@ -16,6 +16,7 @@ const auth = getAuth(app);
 // const db = getFirestore(app);
 
 const googleProvider = new GoogleAuthProvider();
+let userSigned;
 
 const signInWithGoogle = async () => {
   try {
@@ -50,9 +51,7 @@ export const handleSignIn = async (email, password) => {
   await signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in
-    const user = userCredential.user;
-    console.log("USER LOGGED", user)
-    // ...
+    userSigned = userCredential.user;
   })
   .catch((error) => {
     console.log("THE ERROR", error)
@@ -67,7 +66,7 @@ export const handleSignUp = async (email, password) => {
   .then((userCredential) => {
     // Signed in
     const user = userCredential.user;
-    console.log("USER", user)
+    return user;
     // ...
   })
   .catch((error) => {
@@ -98,7 +97,6 @@ export {
   // db,
   signInWithGoogle,
   logInWithEmailAndPassword,
-  
   sendPasswordReset,
   logout,
 };
