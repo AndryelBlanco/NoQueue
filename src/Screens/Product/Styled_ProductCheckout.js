@@ -58,6 +58,7 @@ export const SliderView = styled.View`
 
   width: 100%;
   height: 38%;
+  min-height: 340px;
   background-color: #fff;
 `;
 

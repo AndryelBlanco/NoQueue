@@ -43,7 +43,7 @@ const TabNavigator = () => {
         tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name="Lojas" options={tabOptions} component={Login} />
+      <Tab.Screen name="Lojas" options={tabOptions} component={ProductCheckout} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
       <Tab.Screen name="Minha Conta" options={tabOptions}  component={Profile} />
       <Tab.Screen name="Carteira" options={tabOptions}  component={Wallet} />

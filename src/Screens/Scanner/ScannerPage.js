@@ -6,7 +6,15 @@ import { ScannerPageContainer } from './Styled_ScannerPage'
 const ScannerPage = ({ navigation }) => {
   
   function handleChange(){
-    navigation.navigate('Checkout');
+    function getRandom(){
+      let min = Math.ceil(0);
+      let max = Math.floor(5);
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    const randomNumber = getRandom();
+    console.log("random", randomNumber)
+    navigation.navigate('Checkout', {randomNumber: randomNumber});
   }
   
   return (
