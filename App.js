@@ -15,6 +15,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabNavigator from './src/Navigation/TabNavigator';
 
 import Login from './src/Screens/Login/Login'
+import Wallet from './src/Screens/Wallet/Wallet';
 
 const Tab = createBottomTabNavigator();
 
@@ -46,6 +47,9 @@ function MyTabs() {
           case 'Perfil':
             iconName = 'account'
             break;
+          case 'Carteira':
+            iconName = 'wallet'
+            break;
         }
           // You can return any component that you like here! 
           return (
@@ -58,6 +62,7 @@ function MyTabs() {
       >
       <Tab.Screen name="Lojas" options={tabOptions} component={Login} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
+      <Tab.Screen name="Carteira" options={tabOptions}  component={Wallet} />
       <Tab.Screen name="Perfil" options={tabOptions}  component={Profile} />
     </Tab.Navigator>
   );
