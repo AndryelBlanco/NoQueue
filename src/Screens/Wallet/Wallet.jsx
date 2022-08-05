@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native';
-import { Balance, BalanceHistory, BalanceTitle, ContainerHistory, DateHistory, History, PageBalance, PageTitle, Title, WalletPageContainer } from './Styled_wallet';
+import { Balance, BalanceTitle, BalanceHistory, ContainerHistory, DateHistory, History, PageBalance, PageTitle, Title, WalletPageContainer } from './Styled_wallet';
 
 
 const Wallet = () => {
@@ -20,10 +20,9 @@ const Wallet = () => {
           <BalanceHistory>R$ 120,25</BalanceHistory>
           <DateHistory>20/05/22</DateHistory>
         </ContainerHistory>
-        
-        
     </WalletPageContainer>
   );
 }
+
 
 export default Wallet

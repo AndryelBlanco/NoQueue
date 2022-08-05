@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const WalletPageContainer = styled.View`
   display: flex;
   height: 100%;
-  padding: 4px;
+  padding: 4px;nd
   background-color: #EEEEEE;
 `;
 
