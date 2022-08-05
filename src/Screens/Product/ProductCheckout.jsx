@@ -19,7 +19,8 @@ const images = [
  const arrayOfObjects = [
   {
     title: 'Logitech G890',
-    description: '',
+    price:'500',
+    description: 'Fone de ouvido',
     images: [
       {
        image: require('../../images/products/Headset/headset1.png'),
@@ -33,6 +34,90 @@ const images = [
      ]
   },
   
+  {
+    title: 'Nitro 5',
+    price:'4500',
+    description: 'Notebook',
+    images: [
+      {
+       image: require('../../images/products/Nitro5/notebook1.jpg'),
+      },
+     {
+       image:require('../../images/products/Nitro5/notebook2.jpg'),
+     },
+     {
+      image:require('../../images/products/Nitro5/notebook3.jpg'),
+      },
+     ]
+  },
+
+  {
+    title: 'Escrivaninha',
+    price:'300',
+    description: 'Mesa escrivaninha',
+    images: [
+      {
+       image: require('../../images/products/Mesa/mesa1.jpg'),
+      },
+     {
+       image:require('../../images/products/Mesa/mesa2.jpg'),
+     },
+     {
+      image:require('../../images/products/Mesa/mesa3.jpg'),
+      },
+     ]
+  },
+
+  {
+    title: 'Celular',
+    price:'1350',
+    description: 'Smartphone Samsung Galaxy A23 128GB Preto 4G - Octa-Core 4GB RAM 6,6” Câm Quádrupla + Selfie 8MP',
+    images: [
+      {
+       image: require('../../images/products/Celular/celular1.jpg'),
+      },
+     {
+      image: require('../../images/products/Celular/celular2.jpg'),
+     },
+     {
+      image: require('../../images/products/Celular/celular3.jpg'),
+      },
+     ]
+  },
+
+  {
+    title: 'jogo de panelas',
+    price:'800',
+    description: 'Jogo de Panelas Tramontina Mônaco em Alumínio com Revestimento Interno e Externo em Starflon Premium Preto 05 Peças',
+    images: [
+      {
+       image: require('../../images/products/Panelas/panela1.jpg'),
+      },
+     {
+       image:require('../../images/products/Panelas/panela2.jpg'),
+     },
+     {
+      image:require('../../images/products/Panelas/panela3.jpg'),
+      },
+     ]
+  },
+
+  {
+    title: 'Fone de ouvido para correr',
+    price:'250',
+    description: 'Fone de ouvido Jbl Endurance Run Bluetooth',
+    images: [
+      {
+       image: require('../../images/products/Fone/fone1.jpg'),
+      },
+     {
+       image:require('../../images/products/Fone/fone2.jpg'),
+     },
+     {
+      image:require('../../images/products/Fone/fone3.jpg'),
+      },
+     ]
+  },
  ]
 
  

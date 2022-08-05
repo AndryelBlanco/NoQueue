@@ -53,6 +53,16 @@ display: flex;
 flex-direction: row;
 align-items: center;
 margin-top: 20px;
+
+
+shadowColor: "#00ff";
+shadowOffset:{
+width: 0;
+height: 9;
+};
+shadowOpacity: 1;
+shadowRadius: 1;
+elevation: 5;
 `;
 
 export const OptionsIcon = styled.View`

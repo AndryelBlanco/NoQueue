@@ -31,7 +31,38 @@ const tabOptions = { headerShown: false }
 //   );
 // }
 
-
+function MyTabs() {
+  return (
+    <Tab.Navigator 
+      screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+        switch(route.name){
+          case 'Lojas':
+            iconName = 'map-marker-outline'
+            break;
+          case 'Scanner':
+            iconName = 'qrcode-scan'
+            break;
+          case 'Perfil':
+            iconName = 'account'
+            break;
+        }
+          // You can return any component that you like here! 
+          return (
+            <MaterialCommunityIcons name={iconName} size={size} color={color} />
+          );
+        },
+        tabBarActiveTintColor: '#0057FF',
+        tabBarInactiveTintColor: 'gray',
+        })}
+      >
+      <Tab.Screen name="Lojas" options={tabOptions} component={Stores} />
+      <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
+      <Tab.Screen name="Perfil" options={tabOptions}  component={Profile} />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   return (
