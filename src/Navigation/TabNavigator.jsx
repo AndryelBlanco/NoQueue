@@ -6,6 +6,7 @@ import ProductCheckout from '../Screens/Product/ProductCheckout';
 import Profile from '../Screens/Profile/Profile';
 import ScannerPage from '../Screens/Scanner/ScannerPage';
 import Stores from '../Screens/Stores/Stores';
+import Wallet from '../Screens/Wallet/Wallet';
 import StackNavigator from './StackNavigator'
 
 const Tab = createBottomTabNavigator();
@@ -13,7 +14,8 @@ const tabOptions = { headerShown: false }
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator 
+    <Tab.Navigator
+      initialRouteName='Scanner'
       screenOptions={({ route }) => ({
       tabBarHideOnKeyboard: true,  
       tabBarIcon: ({ focused, color, size }) => {
@@ -28,6 +30,9 @@ const TabNavigator = () => {
           case 'Minha Conta':
             iconName = 'account'
             break;
+          case 'Carteira':
+            iconName = 'wallet'
+            break;
         }
           // You can return any component that you like here! 
           return (
@@ -41,6 +46,7 @@ const TabNavigator = () => {
       <Tab.Screen name="Lojas" options={tabOptions} component={Login} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
       <Tab.Screen name="Minha Conta" options={tabOptions}  component={Profile} />
+      <Tab.Screen name="Carteira" options={tabOptions}  component={Wallet} />
       <Tab.Screen name="Checkout" component={ProductCheckout} 
         options={{
           headerShown: false,

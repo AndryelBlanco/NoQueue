@@ -15,7 +15,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabNavigator from './src/Navigation/TabNavigator';
 
 import Login from './src/Screens/Login/Login'
-import Wallet from './src/Screens/Wallet/Wallet';
+import Wallet from './src/Screens/Wallet/Wallet'
 
 const Tab = createBottomTabNavigator();
 
@@ -31,42 +31,7 @@ const tabOptions = { headerShown: false }
 //   );
 // }
 
-function MyTabs() {
-  return (
-    <Tab.Navigator 
-      screenOptions={({ route }) => ({
-      tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
-        switch(route.name){
-          case 'Lojas':
-            iconName = 'map-marker-outline'
-            break;
-          case 'Scanner':
-            iconName = 'qrcode-scan'
-            break;
-          case 'Perfil':
-            iconName = 'account'
-            break;
-          case 'Carteira':
-            iconName = 'wallet'
-            break;
-        }
-          // You can return any component that you like here! 
-          return (
-            <MaterialCommunityIcons name={iconName} size={size} color={color} />
-          );
-        },
-        tabBarActiveTintColor: '#0057FF',
-        tabBarInactiveTintColor: 'gray',
-        })}
-      >
-      <Tab.Screen name="Lojas" options={tabOptions} component={Login} />
-      <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
-      <Tab.Screen name="Carteira" options={tabOptions}  component={Wallet} />
-      <Tab.Screen name="Perfil" options={tabOptions}  component={Profile} />
-    </Tab.Navigator>
-  );
-}
+
 
 export default function App() {
   return (
