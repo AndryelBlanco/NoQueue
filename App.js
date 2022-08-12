@@ -64,7 +64,7 @@ function MyTabs() {
   );
 }
 
-export default function App() {
+export default function App() { 
   return (
       <AuthContextProvider>    
         <NavigationContainer>
