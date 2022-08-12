@@ -1,16 +1,14 @@
 import React, { useContext } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native';
-import { Balance, BalanceTitle, BalanceHistory, ContainerHistory, DateHistory, History, PageBalance, PageTitle, Title, WalletPageContainer } from './Styled_wallet';
-
+import { Balance, BalanceTitle, BalanceHistory, ContainerHistory, DateHistory, History, PageBalance, WalletPageContainer } from './Styled_wallet';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import PageTitle from '../../Components/PageTitle/PageTitle';
 
 const Wallet = () => {
 
-
   return (
     <WalletPageContainer>
-        <PageTitle>
-          <Title>Minha Carteira</Title>
-        </PageTitle> 
+        <PageTitle text ='Minha Carteira' icon='wallet'/>
         <PageBalance>
           <BalanceTitle>Saldo disponível</BalanceTitle>
           <Balance>R$ 999,99</Balance>

@@ -8,7 +8,9 @@ const PageTitle = ({ text, icon }) => {
     switch(icon){
       case 'store':
         return <MaterialCommunityIcons name={'format-list-bulleted'} color={'#fff'} size={18}/>
-
+      case 'wallet':
+        return <MaterialCommunityIcons name={'format-list-bulleted'} color={'#fff'} size={18}/>
+  
     }
   }
 

@@ -1,32 +1,11 @@
 import styled from 'styled-components';
 
+
 export const WalletPageContainer = styled.View`
   display: flex;
   height: 100%;
-  padding: 4px;nd
+  margin-top: 30px;
   background-color: #EEEEEE;
-`;
-
-export const PageTitle = styled.View `
-  display: flex;
-  width: 97%;
-  height:49px;
-  margin-top:32px;
-  margin-left:7px;
-
-  background: #0057FF;
-  border: 2px solid #3793FF;
-  border-radius: 10px;
-`;
-
-export const Title = styled.Text `
-  font-style: normal;
-  font-weight: 600;
-  font-size: 19px;
-  color:#fff;
-
-  margin-left: 22px;
-  padding: 10px;
 `;
 
 export const PageBalance = styled.View `
