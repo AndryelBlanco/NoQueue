@@ -15,7 +15,7 @@ const tabOptions = { headerShown: false }
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName='Scanner'
+      initialRouteName='Login'
       screenOptions={({ route }) => ({
       tabBarHideOnKeyboard: true,  
       tabBarIcon: ({ focused, color, size }) => {
@@ -27,11 +27,11 @@ const TabNavigator = () => {
           case 'Scanner':
             iconName = 'qrcode-scan'
             break;
-          case 'Minha Conta':
-            iconName = 'account'
-            break;
           case 'Carteira':
             iconName = 'wallet'
+            break;
+          case 'Minha Conta':
+            iconName = 'account'
             break;
         }
           // You can return any component that you like here! 
@@ -43,10 +43,20 @@ const TabNavigator = () => {
         tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name="Lojas" options={tabOptions} component={ProductCheckout} />
+      <Tab.Screen name="Lojas" options={tabOptions} component={Stores} />
       <Tab.Screen name="Scanner" options={tabOptions}  component={ScannerPage} />
-      <Tab.Screen name="Minha Conta" options={tabOptions}  component={Profile} />
       <Tab.Screen name="Carteira" options={tabOptions}  component={Wallet} />
+      <Tab.Screen name="Minha Conta" options={tabOptions}  component={Profile} />
+      <Tab.Screen name="Login" component={Login}   
+        options={{
+          headerShown: false,
+          tabBarButton: () => null,
+          tabBarStyle: {
+            display: "none",
+          },
+          tabBarVisible: false, // if you don't want to see the tab bar
+        }}
+      />
       <Tab.Screen name="Checkout" component={ProductCheckout} 
         options={{
           headerShown: false,

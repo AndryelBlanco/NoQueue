@@ -18,24 +18,30 @@ const Stores = ({navigation }) => {
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
       title: 'Beagle Store 01',
-      logo: 'https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png'
+      logo: 'https://almeidajunior-prod1.s3.amazonaws.com/prod/media_cache/site_search_store/575b0c9888bb3.png'
+
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
       title: 'Beagle Store 02',
-      logo: 'https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png'
+      logo: 'https://almeidajunior-prod1.s3.amazonaws.com/prod/media_cache/site_search_store/575b0c9888bb3.png'
+
+
 
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
       title: 'Beagle Store 03',
-      logo: 'https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png'
+      logo: 'https://almeidajunior-prod1.s3.amazonaws.com/prod/media_cache/site_search_store/575b0c9888bb3.png'
+
+
 
     },
     {
       id: Math.random(),
       title: 'Beagle Store 04',
-      logo: 'https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png'
+      logo: 'https://almeidajunior-prod1.s3.amazonaws.com/prod/media_cache/site_search_store/575b0c9888bb3.png'
+
 
     },
     {
@@ -59,24 +65,12 @@ const Stores = ({navigation }) => {
     {
       id: Math.random(),
       title: 'Casas Bahia Nova esperança',
-      logo: 'https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png'
+      logo: 'https://gkpb.com.br/wp-content/uploads/2020/06/icone-casas-bahia-2.jpg'
 
     },
     {
       id: Math.random(),
       title: 'Magazine Luiza 02',
-      logo: 'https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png'
-
-    },
-    {
-      id: Math.random(),
-      title: 'Target Store 09',
-      logo: 'https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png'
-
-    },
-    {
-      id: Math.random(),
-      title: 'Target Store 20',
       logo: 'https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png'
 
     },
